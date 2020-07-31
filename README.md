@@ -1,6 +1,6 @@
 # SemanticLoggerJournald
 
-Plugin for semantic_logger that adds appender to send logs into journald.
+Plugin for [semantic_logger](https://github.com/rocketjob/semantic_logger) that adds appender to send logs into journald.
 
 It uses [journald-logger](https://github.com/theforeman/journald-logger) under the hood.
 
