@@ -44,8 +44,8 @@ It'll produce the following journald fields:
 
 ```
 MESSAGE=Paid
-PAYLOAD__ORDER__ID=1
-PAYLOAD__ORDER__STATUS=new
+ORDER__ID=1
+ORDER__STATUS=new
 ```
 
 If you'd rather keep the payload intact, pass a custom formatter:
