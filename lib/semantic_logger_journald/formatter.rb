@@ -64,7 +64,7 @@ module SemanticLoggerJournald
     end
 
     def join_keys(*args)
-      args.join(@flatten_payload)
+      args.join(@flatten_payload).to_sym
     end
 
     # from syslog_protocol gem
