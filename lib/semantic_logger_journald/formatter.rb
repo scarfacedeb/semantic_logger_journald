@@ -24,6 +24,11 @@ module SemanticLoggerJournald
       hash[:syslog_timestamp] = time_format ? format_time(log.time) : format_syslog_time(log.time)
     end
 
+    # It's already logged by journald as _PID
+    def pid
+      nil
+    end
+
     def tags
       hash.merge!(log.tags.map { |t| [t, 1] }.to_h) if log.tags&.any?
     end
