@@ -33,17 +33,21 @@ module SemanticLoggerJournald
     end
 
     def payload
-      return if log.payload&.empty?
+      return if !log.payload || log.payload.empty?
 
       payload = log.payload
-      payload = flatten_hash(payload, "payload") if flatten_payload
+      payload = flatten_hash(payload, "payload") if flatten_payload?
       hash.merge!(payload)
     end
 
     private
 
-    def flatten_hash(hash, prefix)
-      hash.each_with_object({}) do |(key, val), h|
+    def flatten_payload?
+      log.payload&.any? && @flatten_payload
+    end
+
+    def flatten_hash(nested_hash, prefix)
+      nested_hash.each_with_object({}) do |(key, val), h|
         if val.is_a?(Hash)
           flatten_hash(val).map { |nested_key, nested_val|
             h[join_keys(prefix, key, nested_key)] = nested_val
