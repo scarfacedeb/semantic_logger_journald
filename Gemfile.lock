@@ -1,0 +1,29 @@
+PATH
+  remote: .
+  specs:
+    semantic_logger_journald (0.1.0)
+      journald-logger (~> 3.0)
+      semantic_logger (~> 4.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.1.6)
+    journald-logger (3.0.1)
+      journald-native (~> 1.0)
+    journald-native (1.0.12)
+    minitest (5.14.1)
+    rake (12.3.3)
+    semantic_logger (4.7.1)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (~> 5.0)
+  rake (~> 12.0)
+  semantic_logger_journald!
+
+BUNDLED WITH
+   2.1.4
